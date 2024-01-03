@@ -1,0 +1,39 @@
+1) Code:
+die_faces = [1, 2, 3, 4, 5, 6]
+total_combinations = 0
+for face_a in die_faces:
+    for face_b in die_faces:
+       total_combinations += 1
+print("Total Combinations:", total_combinations)
+
+2) Code:
+ die_faces = [1, 2, 3, 4, 5, 6]
+distribution = {}
+for face_a in die_faces:
+    for face_b in die_faces:
+        total_sum = face_a + face_b
+        if total_sum in distribution:
+            distribution[total_sum] += 1
+        else:
+            distribution[total_sum] = 1
+print("Distribution of Sum:")
+for key, value in distribution.items():
+    print(f"Sum {key}: {value} combinations")
+
+3)Code:
+die_faces = [1, 2, 3, 4, 5, 6]
+probability = {}
+for face_a in die_faces:
+    for face_b in die_faces:
+        total_sum = face_a + face_b
+        if total_sum in probability:
+            probability[total_sum] += 1
+        else:
+            probability[total_sum] = 1
+print("Probability of Sum:")
+total_combinations = len(die_faces) * len(die_faces)
+for key, value in probability.items():
+    prob = value / total_combinations
+    print(f"P(Sum = {key}) = {value}/{total_combinations} = {prob:.2f}")
+
+
